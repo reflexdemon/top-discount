@@ -17,6 +17,14 @@
 	"itemCost": 100.0
 }
 
+// Discount FGH exists that gives 20% off when purchasing 2 or more of shirts with id 123
+{
+	"discountCode": "FGH",
+	"percentage": 0.20,
+	"discountType": "ITEM_COUNT",
+	"itemCount": 2
+}
+
 
 User submits a request to calculate the best discount for a $50 shirt
 [ { "itemId": 123, "quantity": 1 } ]
