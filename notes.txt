@@ -1,0 +1,22 @@
+
+
+// Discount ABC exists that gives 10% off all items of type CLOTHES
+{
+	"discountCode": "ABC",
+	"percentage": 0.1,
+	"discountType": "ITEM_TYPE",
+	"itemType": "CLOTHES"
+}
+
+
+//Discount CDE exists that gives 15% off all items over $100
+{
+	"discountCode": "CDE",
+	"percentage": 0.15,
+	"discountType": "ITEM_COST",
+	"itemCost": 100.0
+}
+
+
+User submits a request to calculate the best discount for a $50 shirt
+[ { "itemId": 123, "quantity": 1 } ]
