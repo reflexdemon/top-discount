@@ -58,7 +58,7 @@ THEN
 The system should response with discount CDE and a total cost of $305
 
 
-## Demo
+## Testing Instructions
 
 Prerequisites:
 * JDK 17
