@@ -3,6 +3,7 @@ plugins {
     id 'org.springframework.boot' version '3.0.3'
     id 'io.spring.dependency-management' version '1.1.0'
     id 'com.adarshr.test-logger' version '3.2.0'
+    id 'jacoco'
 }
 
 group = 'io.vpv'
@@ -51,4 +52,15 @@ testlogger {
     showSkippedStandardStreams true
     showFailedStandardStreams true
     logLevel 'lifecycle'
+}
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
 }

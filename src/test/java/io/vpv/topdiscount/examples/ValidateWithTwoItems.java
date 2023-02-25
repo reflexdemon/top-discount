@@ -31,6 +31,7 @@ public class ValidateWithTwoItems extends TopDiscountApplication {
     @AfterEach
     void tearDown() {
         itemService.deleteAll();
+        discountService.deleteAllDiscounts();
     }
 
     @Test

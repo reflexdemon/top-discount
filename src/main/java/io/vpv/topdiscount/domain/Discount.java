@@ -9,8 +9,6 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-@Setter
 @Getter
 @ToString
 @Entity(name = "discount")

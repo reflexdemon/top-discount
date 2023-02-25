@@ -24,14 +24,6 @@ public class DiscountService {
         return discountDao.findAll();
     }
 
-    public Optional<Discount> getDiscountsById(final Integer id) {
-        return discountDao.findById(id);
-    }
-
-    public Discount getByCode(final String discountCode) {
-        return discountDao.findByDiscountCode(discountCode);
-    }
-
     public Discount createDiscount(final Discount discount) {
         if (null != discount.getId() && discount.getId() != 0) {
             throw new RuntimeException("Cannot create Discount with ID already existing " + discount);
@@ -40,7 +32,7 @@ public class DiscountService {
     }
 
     public Discount updateDiscount(final Discount discount) {
-        if (discount.getId() == 0) {
+        if (null == discount || discount.getId() == 0) {
             throw new RuntimeException("Cannot update Discount without ID" + discount);
         }
         return discountDao.save(discount);
